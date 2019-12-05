@@ -1,0 +1,23 @@
+{
+  "name": "etudientonfire-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthony-Jhoiro/etudient-on-fire-back.git"
+  },
+  "author": "Anthony-Jhoiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthony-Jhoiro/etudient-on-fire-back/issues"
+  },
+  "homepage": "https://github.com/Anthony-Jhoiro/etudient-on-fire-back#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+}
