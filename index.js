@@ -32,7 +32,7 @@ app.get('/topics', function (req, res) {
         console.log("il est passé par ici");
     }
     else {
-        connection.query('SELECT id_topic, titre, content, nom, prenom, libelle FROM topic INNER JOIN user ON topic.auteur = user.id_usr INNER JOIN categorie ON topic.cat_id = categorie.id_cat', (err, rows, fiels) => {
+        connection.query('SELECT id_topic, titre, content, nom, prenom, libelle FROM topic INNER JOIN user ON topic.auteur = user.id_usr INNER JOIN categorie ON topic.cat_id = categorie.id_cat WHERE libelle = ?', [req.query.categorie],(err, rows, fiels) => {
             if (err) throw err;
             res.json(rows);
         });
