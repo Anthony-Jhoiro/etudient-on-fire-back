@@ -45,6 +45,20 @@ app.get('/getCommentaires', function (req, res){
     });
 })
 
+app.get('/getTopicDetail', function (req, res) {
+    connection.query('SELECT * FROM topic WHERE id_topic = ?', [req.query.id], (err, rows, fiels) => {
+        if (err) throw err;
+        res.json(rows);
+    });
+})
+
+app.get('/getCategories', function (req, res) {
+    connection.query('SELECT * FROM categorie', (err, rows, fiels) => {
+        if (err) throw err;
+        res.json(rows);
+    });
+})
+
 
 
 // app.post('/newTopic', (req, res) => {
