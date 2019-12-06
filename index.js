@@ -3,20 +3,15 @@ const mysql = require('mysql');
 const bodyParser = require("body-parser");
 const app = express();
 
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    port     : '3308', 
-    user     : 'root',
-    password : '',
-    database : 'entudiant-on-fire'
-});
+// app.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
+
+var connection = require('./config');
 
 connection.connect();
-
-// connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-//     if (err) throw err;
-//     console.log('The solution is: ', rows[0].solution);
-// });
 
 recupListeTopic = (categorie = null) => {
     
@@ -59,11 +54,15 @@ app.get('/getCategories', function (req, res) {
     });
 })
 
-
-
-// app.post('/newTopic', (req, res) => {
-//     // req.body.
+// app.post('/creationTopic', (req, res) => {
+//     connection.query('SELECT ')
+//     connection.query('INSERT INTO topic(titre, contenu, auteur, cat_id) VALUES(?,?,?,?)', (err, rows, fiels) => {
+//         if (err) throw err;
+//         res.json(rows);
+//     });
 // });
+
+
 
 
 
